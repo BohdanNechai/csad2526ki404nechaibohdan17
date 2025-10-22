@@ -11,7 +11,15 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-# Опціональні прапори для підвищення строгості (Windows/MSVC та GCC/Clang)
+# Додаємо підтримку Google Test
+include(FetchContent)
+FetchContent_Declare(
+    googletest
+    URL https://github.com/google/googletest/archive/refs/tags/v1.14.0.zip
+)
+FetchContent_MakeAvailable(googletest)
+
+# Опціональні прапори для підвищення строгості
 if(MSVC)
     target_compile_options(${PROJECT_NAME} PRIVATE /W4 /permissive-)
 else()
@@ -43,13 +51,12 @@ if(EXISTS "${CMAKE_SOURCE_DIR}/src/main.cpp")
     target_link_libraries(${PROJECT_NAME}_app PRIVATE ${PROJECT_NAME})
 endif()
 
-# Тестування (опціонально)
+# Тестування
 include(CTest)
 option(BUILD_TESTING "Build tests" ON)
 if(BUILD_TESTING)
     enable_testing()
-    # Якщо у вас є каталог tests з власним CMakeLists.txt — розкоментуйте:
-    # add_subdirectory(tests)
+    add_subdirectory(tests)
 endif()
 
 # Інсталяція (базова)
