@@ -1,0 +1,107 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+-- [КОМЕНТАР] Етап 3: Тестбенч
+-- Це порожня сутність, бо тестбенч ні з чим не з'єднується
+entity i2c_testbench is
+end entity i2c_testbench;
+
+architecture tb of i2c_testbench is
+
+    -- === 1. Константи ===
+    constant CLK_PERIOD   : time := 20 ns; -- 50 МГц (для SYS_CLK_FREQ)
+    constant TEST_BYTE    : std_logic_vector(7 downto 0) := x"A5"; -- Байт, який посилаємо
+
+    -- === 2. Сигнали для з'єднання модулів ===
+    
+    -- Сигнали для генераторів
+    signal s_clk     : std_logic := '0'; -- Наш головний CLK
+    signal s_reset_n : std_logic;       -- Наш головний RESET (активний '0')
+
+    -- Сигнали для Master-а (Tx)
+    signal s_start_tx    : std_logic := '0';
+    signal s_byte_to_tx  : std_logic_vector(7 downto 0);
+    signal s_tx_busy     : std_logic;
+    signal s_ack_error   : std_logic;
+
+    -- Сигнали для Slave-а (Rx)
+    signal s_byte_received : std_logic_vector(7 downto 0);
+    signal s_rx_done       : std_logic;
+
+    -- Шина I2C
+    -- Ініціалізуємо 'H' - це імітує PULL-UP резистори
+    signal s_scl : std_logic := 'H'; 
+    signal s_sda : std_logic := 'H';
+
+begin
+
+    -- ================================================================
+    -- 3. Підключення твоїх модулів (Unit Under Test - UUT)
+    -- ================================================================
+
+    -- Підключаємо Master (Tx)
+    UUT_Master : entity work.i2c_master_tx
+        port map (
+            clk        => s_clk,
+            reset_n    => s_reset_n,
+            start_tx   => s_start_tx,
+            byte_to_tx => s_byte_to_tx,
+            tx_busy    => s_tx_busy,
+            ack_error  => s_ack_error,
+            scl        => s_scl, -- Підключаємо до спільної шини
+            sda        => s_sda  -- Підключаємо до спільної шини
+        );
+
+    -- Підключаємо Slave (Rx)
+    UUT_Slave : entity work.i2c_slave_rx
+        port map (
+            clk           => s_clk,
+            reset_n       => s_reset_n,
+            byte_received => s_byte_received,
+            rx_done       => s_rx_done,
+            scl           => s_scl, -- Підключаємо до спільної шини
+            sda           => s_sda  -- Підключаємо до спільної шини
+        );
+
+    -- ================================================================
+    -- 4. Генератори (CLK та RESET)
+    -- ================================================================
+
+    -- Генератор CLK (50 МГц) [cite: 33]
+    s_clk <= not s_clk after CLK_PERIOD / 2;
+
+    -- ================================================================
+    -- 5. Стимули (Тестовий сценарій)
+    -- ================================================================
+    
+    -- Цей процес описує, що ми робимо
+    stimulus_proc : process
+    begin
+        -- a) Початковий Скид [cite: 33]
+        s_reset_n <= '0';
+        wait for 100 ns;
+        s_reset_n <= '1';
+        wait for 100 ns;
+
+        -- б) Готуємо дані для відправки [cite: 33]
+        s_byte_to_tx <= TEST_BYTE;
+        wait for CLK_PERIOD * 10;
+
+        -- в) Даємо команду "СТАРТ"
+        s_start_tx <= '1';
+        wait for CLK_PERIOD;
+        s_start_tx <= '0';
+
+        -- г) Чекаємо, поки Master не скаже, що він вільний
+        wait until s_tx_busy = '0';
+        
+        wait for 1 us; -- Чекаємо ще трохи, щоб побачити результат
+
+        -- д) Зупиняємо симуляцію
+			report "Simulation done";
+        wait;
+        
+    end process stimulus_proc;
+
+end architecture tb;

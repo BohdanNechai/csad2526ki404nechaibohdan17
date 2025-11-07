@@ -1,5 +1,5 @@
 Analysis & Synthesis report for i2c_master_tx
-Wed Oct 29 15:00:45 2025
+Tue Nov  4 16:20:24 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Standard Edition
 
 
@@ -13,12 +13,14 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Standard Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |i2c_master_tx|current_state
-  9. User-Specified and Inferred Latches
- 10. General Register Statistics
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  8. State Machine - |i2c_master_tx|state
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |i2c_master_tx
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
 
 
 
@@ -45,14 +47,14 @@ on the Quartus Prime software download page.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +---------------------------------+-----------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Oct 29 15:00:45 2025               ;
+; Analysis & Synthesis Status     ; Successful - Tue Nov  4 16:20:24 2025               ;
 ; Quartus Prime Version           ; 24.1std.0 Build 1077 03/04/2025 SC Standard Edition ;
 ; Revision Name                   ; i2c_master_tx                                       ;
 ; Top-level Entity Name           ; i2c_master_tx                                       ;
 ; Family                          ; Cyclone V                                           ;
 ; Logic utilization (in ALMs)     ; N/A                                                 ;
-; Total registers                 ; 14                                                  ;
-; Total pins                      ; 23                                                  ;
+; Total registers                 ; 30                                                  ;
+; Total pins                      ; 15                                                  ;
 ; Total virtual pins              ; 0                                                   ;
 ; Total block memory bits         ; 0                                                   ;
 ; Total DSP Blocks                ; 0                                                   ;
@@ -169,40 +171,40 @@ on the Quartus Prime software download page.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                         ; Library ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------+---------+
-; i2c_master_tx.vhd                ; yes             ; User VHDL File  ; C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd ;         ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                      ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                               ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------+---------+
+; i2c_master_tx.vhd                ; yes             ; User VHDL File  ; C:/apks/csad2526ki404nechaibohdan17/lab2/i2c_master_tx.vhd ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------+---------+
 
 
-+-------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                             ;
-+---------------------------------------------+---------------------------+
-; Resource                                    ; Usage                     ;
-+---------------------------------------------+---------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 27                        ;
-;                                             ;                           ;
-; Combinational ALUT usage for logic          ; 50                        ;
-;     -- 7 input functions                    ; 2                         ;
-;     -- 6 input functions                    ; 2                         ;
-;     -- 5 input functions                    ; 4                         ;
-;     -- 4 input functions                    ; 5                         ;
-;     -- <=3 input functions                  ; 37                        ;
-;                                             ;                           ;
-; Dedicated logic registers                   ; 14                        ;
-;                                             ;                           ;
-; I/O pins                                    ; 23                        ;
-;                                             ;                           ;
-; Total DSP Blocks                            ; 0                         ;
-;                                             ;                           ;
-; Maximum fan-out node                        ; current_state.ST_WAIT_ACK ;
-; Maximum fan-out                             ; 17                        ;
-; Total fan-out                               ; 242                       ;
-; Average fan-out                             ; 2.18                      ;
-+---------------------------------------------+---------------------------+
++-------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                 ;
++---------------------------------------------+---------------+
+; Resource                                    ; Usage         ;
++---------------------------------------------+---------------+
+; Estimate of Logic utilization (ALMs needed) ; 19            ;
+;                                             ;               ;
+; Combinational ALUT usage for logic          ; 33            ;
+;     -- 7 input functions                    ; 0             ;
+;     -- 6 input functions                    ; 3             ;
+;     -- 5 input functions                    ; 5             ;
+;     -- 4 input functions                    ; 3             ;
+;     -- <=3 input functions                  ; 22            ;
+;                                             ;               ;
+; Dedicated logic registers                   ; 30            ;
+;                                             ;               ;
+; I/O pins                                    ; 15            ;
+;                                             ;               ;
+; Total DSP Blocks                            ; 0             ;
+;                                             ;               ;
+; Maximum fan-out node                        ; reset_n~input ;
+; Maximum fan-out                             ; 29            ;
+; Total fan-out                               ; 233           ;
+; Average fan-out                             ; 2.45          ;
++---------------------------------------------+---------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -210,46 +212,23 @@ on the Quartus Prime software download page.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+---------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name   ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+---------------+--------------+
-; |i2c_master_tx             ; 50 (50)             ; 14 (14)                   ; 0                 ; 0          ; 23   ; 0            ; |i2c_master_tx      ; i2c_master_tx ; work         ;
+; |i2c_master_tx             ; 33 (33)             ; 30 (30)                   ; 0                 ; 0          ; 15   ; 0            ; |i2c_master_tx      ; i2c_master_tx ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+---------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |i2c_master_tx|current_state                                                                                                              ;
-+---------------------------+-----------------------+---------------------------+--------------------------+------------------------+-----------------------+
-; Name                      ; current_state.ST_STOP ; current_state.ST_WAIT_ACK ; current_state.ST_TX_BYTE ; current_state.ST_START ; current_state.ST_IDLE ;
-+---------------------------+-----------------------+---------------------------+--------------------------+------------------------+-----------------------+
-; current_state.ST_IDLE     ; 0                     ; 0                         ; 0                        ; 0                      ; 0                     ;
-; current_state.ST_START    ; 0                     ; 0                         ; 0                        ; 1                      ; 1                     ;
-; current_state.ST_TX_BYTE  ; 0                     ; 0                         ; 1                        ; 0                      ; 1                     ;
-; current_state.ST_WAIT_ACK ; 0                     ; 1                         ; 0                        ; 0                      ; 1                     ;
-; current_state.ST_STOP     ; 1                     ; 0                         ; 0                        ; 0                      ; 1                     ;
-+---------------------------+-----------------------+---------------------------+--------------------------+------------------------+-----------------------+
-
-
-+----------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                ;
-+-----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
-+-----------------------------------------------------+---------------------+------------------------+
-; s_data_is_address                                   ; Selector21          ; yes                    ;
-; s_bit_cnt[0]                                        ; Selector20          ; yes                    ;
-; s_bit_cnt[1]                                        ; Selector20          ; yes                    ;
-; s_bit_cnt[2]                                        ; Selector20          ; yes                    ;
-; s_bit_cnt[3]                                        ; Selector20          ; yes                    ;
-; s_tx_data_reg[5]                                    ; Selector2           ; yes                    ;
-; s_tx_data_reg[7]                                    ; Selector2           ; yes                    ;
-; s_tx_data_reg[4]                                    ; Selector2           ; yes                    ;
-; s_tx_data_reg[6]                                    ; Selector2           ; yes                    ;
-; s_tx_data_reg[1]                                    ; Selector2           ; yes                    ;
-; s_tx_data_reg[3]                                    ; Selector2           ; yes                    ;
-; s_tx_data_reg[0]                                    ; Selector2           ; yes                    ;
-; s_tx_data_reg[2]                                    ; Selector2           ; yes                    ;
-; Number of user-specified and inferred latches = 13  ;                     ;                        ;
-+-----------------------------------------------------+---------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
++-----------------------------------------------------------------------------------------------------------+
+; State Machine - |i2c_master_tx|state                                                                      ;
++-------------------+---------------+-------------------+------------------+----------------+---------------+
+; Name              ; state.ST_STOP ; state.ST_WAIT_ACK ; state.ST_TX_BYTE ; state.ST_START ; state.ST_IDLE ;
++-------------------+---------------+-------------------+------------------+----------------+---------------+
+; state.ST_IDLE     ; 0             ; 0                 ; 0                ; 0              ; 0             ;
+; state.ST_START    ; 0             ; 0                 ; 0                ; 1              ; 1             ;
+; state.ST_TX_BYTE  ; 0             ; 0                 ; 1                ; 0              ; 1             ;
+; state.ST_WAIT_ACK ; 0             ; 1                 ; 0                ; 0              ; 1             ;
+; state.ST_STOP     ; 1             ; 0                 ; 0                ; 0              ; 1             ;
++-------------------+---------------+-------------------+------------------+----------------+---------------+
 
 
 +------------------------------------------------------+
@@ -257,14 +236,47 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 14    ;
+; Total registers                              ; 30    ;
 ; Number of registers using Synchronous Clear  ; 8     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 14    ;
+; Number of registers using Asynchronous Clear ; 29    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 7     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; bit_counter[2]                         ; 5       ;
+; bit_counter[1]                         ; 5       ;
+; bit_counter[0]                         ; 5       ;
+; Total number of inverted registers = 3 ;         ;
++----------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |i2c_master_tx|tx_buffer[7]   ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |i2c_master_tx|bit_counter[2] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |i2c_master_tx ;
++----------------+----------+---------------------------------------------------+
+; Parameter Name ; Value    ; Type                                              ;
++----------------+----------+---------------------------------------------------+
+; SYS_CLK_FREQ   ; 50000000 ; Signed Integer                                    ;
+; I2C_CLK_FREQ   ; 100000   ; Signed Integer                                    ;
++----------------+----------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------+
@@ -272,26 +284,25 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 14                          ;
-;     CLR               ; 6                           ;
+; arriav_ff             ; 30                          ;
+;     CLR               ; 14                          ;
 ;     CLR SCLR          ; 8                           ;
-; arriav_io_obuf        ; 1                           ;
-; arriav_lcell_comb     ; 51                          ;
+;     ENA CLR           ; 7                           ;
+;     plain             ; 1                           ;
+; arriav_io_obuf        ; 2                           ;
+; arriav_lcell_comb     ; 33                          ;
 ;     arith             ; 8                           ;
 ;         1 data inputs ; 8                           ;
-;     extend            ; 2                           ;
-;         7 data inputs ; 2                           ;
-;     normal            ; 41                          ;
-;         0 data inputs ; 1                           ;
+;     normal            ; 25                          ;
 ;         2 data inputs ; 4                           ;
-;         3 data inputs ; 25                          ;
-;         4 data inputs ; 5                           ;
-;         5 data inputs ; 4                           ;
-;         6 data inputs ; 2                           ;
-; boundary_port         ; 23                          ;
+;         3 data inputs ; 10                          ;
+;         4 data inputs ; 3                           ;
+;         5 data inputs ; 5                           ;
+;         6 data inputs ; 3                           ;
+; boundary_port         ; 15                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 1.87                        ;
+; Max LUT depth         ; 2.00                        ;
+; Average LUT depth     ; 1.15                        ;
 +-----------------------+-----------------------------+
 
 
@@ -310,80 +321,36 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Standard Edition
-    Info: Processing started: Wed Oct 29 15:00:36 2025
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off i2c_master_tx -c i2c_master_tx
+    Info: Processing started: Tue Nov  4 16:20:16 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off i2c_project -c i2c_master_tx
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file testbench.vhd
+    Info (12022): Found design unit 1: i2c_testbench-tb File: C:/apks/csad2526ki404nechaibohdan17/lab2/testbench.vhd Line: 10
+    Info (12023): Found entity 1: i2c_testbench File: C:/apks/csad2526ki404nechaibohdan17/lab2/testbench.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file i2c_slave_rx.vhd
+    Info (12022): Found design unit 1: i2c_slave_rx-rtl File: C:/apks/csad2526ki404nechaibohdan17/lab2/i2c_slave_rx.vhd Line: 23
+    Info (12023): Found entity 1: i2c_slave_rx File: C:/apks/csad2526ki404nechaibohdan17/lab2/i2c_slave_rx.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file i2c_master_tx.vhd
-    Info (12022): Found design unit 1: i2c_master_tx-rtl File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 40
-    Info (12023): Found entity 1: i2c_master_tx File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 15
+    Info (12022): Found design unit 1: i2c_master_tx-rtl File: C:/apks/csad2526ki404nechaibohdan17/lab2/i2c_master_tx.vhd Line: 24
+    Info (12023): Found entity 1: i2c_master_tx File: C:/apks/csad2526ki404nechaibohdan17/lab2/i2c_master_tx.vhd Line: 7
 Info (12127): Elaborating entity "i2c_master_tx" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at i2c_master_tx.vhd(23): used implicit default value for signal "o_sda" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 23
-Warning (10036): Verilog HDL or VHDL warning at i2c_master_tx.vhd(60): object "s_byte_to_send" assigned a value but never read File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 60
-Warning (10540): VHDL Signal Declaration warning at i2c_master_tx.vhd(62): used explicit default value for signal "s_ack_received" because signal was never assigned a value File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 62
-Warning (10492): VHDL Process Statement warning at i2c_master_tx.vhd(157): signal "s_scl_clk_toggle" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 157
-Warning (10492): VHDL Process Statement warning at i2c_master_tx.vhd(158): signal "s_tx_data_reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 158
-Warning (10492): VHDL Process Statement warning at i2c_master_tx.vhd(161): signal "s_scl_clk_toggle" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 161
-Warning (10492): VHDL Process Statement warning at i2c_master_tx.vhd(173): signal "s_scl_clk_toggle" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 173
-Warning (10492): VHDL Process Statement warning at i2c_master_tx.vhd(175): signal "s_scl_clk_toggle" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 175
-Warning (10492): VHDL Process Statement warning at i2c_master_tx.vhd(182): signal "s_scl_clk_toggle" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 182
-Warning (10631): VHDL Process Statement warning at i2c_master_tx.vhd(119): inferring latch(es) for signal or variable "s_data_is_address", which holds its previous value in one or more paths through the process File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 119
-Warning (10631): VHDL Process Statement warning at i2c_master_tx.vhd(119): inferring latch(es) for signal or variable "s_bit_cnt", which holds its previous value in one or more paths through the process File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 119
-Warning (10631): VHDL Process Statement warning at i2c_master_tx.vhd(119): inferring latch(es) for signal or variable "s_tx_data_reg", which holds its previous value in one or more paths through the process File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 119
-Info (10041): Inferred latch for "s_tx_data_reg[0]" at i2c_master_tx.vhd(119) File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 119
-Info (10041): Inferred latch for "s_tx_data_reg[1]" at i2c_master_tx.vhd(119) File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 119
-Info (10041): Inferred latch for "s_tx_data_reg[2]" at i2c_master_tx.vhd(119) File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 119
-Info (10041): Inferred latch for "s_tx_data_reg[3]" at i2c_master_tx.vhd(119) File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 119
-Info (10041): Inferred latch for "s_tx_data_reg[4]" at i2c_master_tx.vhd(119) File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 119
-Info (10041): Inferred latch for "s_tx_data_reg[5]" at i2c_master_tx.vhd(119) File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 119
-Info (10041): Inferred latch for "s_tx_data_reg[6]" at i2c_master_tx.vhd(119) File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 119
-Info (10041): Inferred latch for "s_tx_data_reg[7]" at i2c_master_tx.vhd(119) File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 119
-Info (10041): Inferred latch for "s_bit_cnt[0]" at i2c_master_tx.vhd(119) File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 119
-Info (10041): Inferred latch for "s_bit_cnt[1]" at i2c_master_tx.vhd(119) File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 119
-Info (10041): Inferred latch for "s_bit_cnt[2]" at i2c_master_tx.vhd(119) File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 119
-Info (10041): Inferred latch for "s_bit_cnt[3]" at i2c_master_tx.vhd(119) File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 119
-Info (10041): Inferred latch for "s_data_is_address" at i2c_master_tx.vhd(119) File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 119
-Warning (13012): Latch s_data_is_address has unsafe behavior File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 65
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal current_state.ST_WAIT_ACK File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 50
-Warning (13012): Latch s_bit_cnt[0] has unsafe behavior File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 119
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal s_bit_cnt[0] File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 119
-Warning (13012): Latch s_bit_cnt[1] has unsafe behavior File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 119
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal current_state.ST_TX_BYTE File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 50
-Warning (13012): Latch s_bit_cnt[2] has unsafe behavior File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 119
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal current_state.ST_TX_BYTE File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 50
-Warning (13012): Latch s_bit_cnt[3] has unsafe behavior File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 119
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal current_state.ST_TX_BYTE File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 50
-Warning (13012): Latch s_tx_data_reg[5] has unsafe behavior File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 119
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal current_state.ST_WAIT_ACK File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 50
-Warning (13012): Latch s_tx_data_reg[7] has unsafe behavior File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 119
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal current_state.ST_WAIT_ACK File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 50
-Warning (13012): Latch s_tx_data_reg[4] has unsafe behavior File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 119
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal current_state.ST_WAIT_ACK File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 50
-Warning (13012): Latch s_tx_data_reg[6] has unsafe behavior File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 119
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal current_state.ST_WAIT_ACK File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 50
-Warning (13012): Latch s_tx_data_reg[1] has unsafe behavior File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 119
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal current_state.ST_WAIT_ACK File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 50
-Warning (13012): Latch s_tx_data_reg[3] has unsafe behavior File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 119
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal current_state.ST_WAIT_ACK File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 50
-Warning (13012): Latch s_tx_data_reg[0] has unsafe behavior File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 119
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal current_state.ST_WAIT_ACK File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 50
-Warning (13012): Latch s_tx_data_reg[2] has unsafe behavior File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 119
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal current_state.ST_WAIT_ACK File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 50
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "o_sda" is stuck at GND File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 23
-    Warning (13410): Pin "o_ack_error" is stuck at GND File: C:/Users/Bohdan/Documents/studying/i2c_master_tx.vhd Line: 33
 Info (286030): Timing-Driven Synthesis is running
+Critical Warning (18061): Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register bit_counter[2] will power up to High File: C:/apks/csad2526ki404nechaibohdan17/lab2/i2c_master_tx.vhd Line: 77
+    Critical Warning (18010): Register bit_counter[1] will power up to High File: C:/apks/csad2526ki404nechaibohdan17/lab2/i2c_master_tx.vhd Line: 77
+    Critical Warning (18010): Register bit_counter[0] will power up to High File: C:/apks/csad2526ki404nechaibohdan17/lab2/i2c_master_tx.vhd Line: 77
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 73 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 18 input pins
-    Info (21059): Implemented 4 output pins
-    Info (21060): Implemented 1 bidirectional pins
-    Info (21061): Implemented 50 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 42 warnings
-    Info: Peak virtual memory: 4934 megabytes
-    Info: Processing ended: Wed Oct 29 15:00:45 2025
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:18
+Info (21057): Implemented 50 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 11 input pins
+    Info (21059): Implemented 2 output pins
+    Info (21060): Implemented 2 bidirectional pins
+    Info (21061): Implemented 35 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4933 megabytes
+    Info: Processing ended: Tue Nov  4 16:20:24 2025
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:19
 
 

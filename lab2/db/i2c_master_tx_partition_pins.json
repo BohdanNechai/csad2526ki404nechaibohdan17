@@ -4,87 +4,63 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "o_scl",
+					"name" : "tx_busy",
 					"strict" : false
 				},
 				{
-					"name" : "o_busy",
+					"name" : "ack_error",
 					"strict" : false
 				},
 				{
-					"name" : "io_sda",
+					"name" : "scl",
 					"strict" : false
 				},
 				{
-					"name" : "i_clk",
+					"name" : "sda",
 					"strict" : false
 				},
 				{
-					"name" : "i_reset_n",
+					"name" : "start_tx",
 					"strict" : false
 				},
 				{
-					"name" : "i_start_tx",
+					"name" : "reset_n",
 					"strict" : false
 				},
 				{
-					"name" : "i_data_byte[5]",
+					"name" : "clk",
 					"strict" : false
 				},
 				{
-					"name" : "i_slave_addr[4]",
+					"name" : "byte_to_tx[7]",
 					"strict" : false
 				},
 				{
-					"name" : "i_data_byte[7]",
+					"name" : "byte_to_tx[6]",
 					"strict" : false
 				},
 				{
-					"name" : "i_slave_addr[6]",
+					"name" : "byte_to_tx[5]",
 					"strict" : false
 				},
 				{
-					"name" : "i_data_byte[4]",
+					"name" : "byte_to_tx[4]",
 					"strict" : false
 				},
 				{
-					"name" : "i_slave_addr[3]",
+					"name" : "byte_to_tx[3]",
 					"strict" : false
 				},
 				{
-					"name" : "i_data_byte[6]",
+					"name" : "byte_to_tx[2]",
 					"strict" : false
 				},
 				{
-					"name" : "i_slave_addr[5]",
+					"name" : "byte_to_tx[1]",
 					"strict" : false
 				},
 				{
-					"name" : "i_data_byte[1]",
-					"strict" : false
-				},
-				{
-					"name" : "i_slave_addr[0]",
-					"strict" : false
-				},
-				{
-					"name" : "i_data_byte[3]",
-					"strict" : false
-				},
-				{
-					"name" : "i_slave_addr[2]",
-					"strict" : false
-				},
-				{
-					"name" : "i_data_byte[0]",
-					"strict" : false
-				},
-				{
-					"name" : "i_data_byte[2]",
-					"strict" : false
-				},
-				{
-					"name" : "i_slave_addr[1]",
+					"name" : "byte_to_tx[0]",
 					"strict" : false
 				}
 			]

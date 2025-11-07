@@ -1,8 +1,0 @@
-
-State Machine - |i2c_master_tx|current_state
-Name current_state.ST_STOP current_state.ST_WAIT_ACK current_state.ST_TX_BYTE current_state.ST_START current_state.ST_IDLE 
-current_state.ST_IDLE 0 0 0 0 0 
-current_state.ST_START 0 0 0 1 1 
-current_state.ST_TX_BYTE 0 0 1 0 1 
-current_state.ST_WAIT_ACK 0 1 0 0 1 
-current_state.ST_STOP 1 0 0 0 1 

@@ -1,0 +1,134 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/apks/csad2526ki404nechaibohdan17/lab2/simulation/questa
+Ei2c_master_tx
+Z1 w1762524196
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8C:/apks/csad2526ki404nechaibohdan17/lab2/i2c_master_tx.vhd
+Z6 FC:/apks/csad2526ki404nechaibohdan17/lab2/i2c_master_tx.vhd
+l0
+L5
+V]S:JKK5RdF^BGGVbX0GQ11
+!s100 OgVELT[i7PD>0N9]L_4lc2
+Z7 OV;C;10.5b;63
+31
+Z8 !s110 1762525404
+!i10b 1
+Z9 !s108 1762525404.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|C:/apks/csad2526ki404nechaibohdan17/lab2/i2c_master_tx.vhd|
+Z11 !s107 C:/apks/csad2526ki404nechaibohdan17/lab2/i2c_master_tx.vhd|
+!i113 1
+Z12 o-93 -work work
+Z13 tExplicit 1 CvgOpt 0
+Artl
+R2
+R3
+R4
+Z14 DEx4 work 13 i2c_master_tx 0 22 ]S:JKK5RdF^BGGVbX0GQ11
+l40
+L24
+VcI6<]oanSFEQC7Q4`m:W>2
+!s100 E3CkS2EB^EG=o4zlbhmMH3
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Ei2c_slave_rx
+Z15 w1762518948
+R2
+R3
+R4
+R0
+Z16 8C:/apks/csad2526ki404nechaibohdan17/lab2/i2c_slave_rx.vhd
+Z17 FC:/apks/csad2526ki404nechaibohdan17/lab2/i2c_slave_rx.vhd
+l0
+L7
+VJzF3NikYocXc1_X7oK=Nk1
+!s100 ^BJScT1k7ae]CYJ[6CFRU1
+R7
+31
+R8
+!i10b 1
+R9
+Z18 !s90 -reportprogress|300|-93|-work|work|C:/apks/csad2526ki404nechaibohdan17/lab2/i2c_slave_rx.vhd|
+Z19 !s107 C:/apks/csad2526ki404nechaibohdan17/lab2/i2c_slave_rx.vhd|
+!i113 1
+R12
+R13
+Artl
+R2
+R3
+R4
+Z20 DEx4 work 12 i2c_slave_rx 0 22 JzF3NikYocXc1_X7oK=Nk1
+l51
+L23
+VYn8VP0>kX?BzSU4UUi^R]3
+!s100 dlLIYY2?g?QTL_73go_Lo3
+R7
+31
+R8
+!i10b 1
+R9
+R18
+R19
+!i113 1
+R12
+R13
+Etestbench
+Z21 w1762525383
+R3
+R4
+R0
+Z22 8C:/apks/csad2526ki404nechaibohdan17/lab2/testbench.vhd
+Z23 FC:/apks/csad2526ki404nechaibohdan17/lab2/testbench.vhd
+l0
+L4
+V3TQ;6hBb@<oBE4KdXVo1J0
+!s100 [5NebAWCFPM^c3`?:eJAz3
+R7
+31
+R8
+!i10b 1
+R9
+Z24 !s90 -reportprogress|300|-93|-work|work|C:/apks/csad2526ki404nechaibohdan17/lab2/testbench.vhd|
+Z25 !s107 C:/apks/csad2526ki404nechaibohdan17/lab2/testbench.vhd|
+!i113 1
+R12
+R13
+Asim
+R20
+R2
+R14
+R3
+R4
+DEx4 work 9 testbench 0 22 3TQ;6hBb@<oBE4KdXVo1J0
+l20
+L7
+V19XWnPcBLZN[=3?20i?7N1
+!s100 cKc04E2MGA7k[:237ADHf2
+R7
+31
+R8
+!i10b 1
+R9
+R24
+R25
+!i113 1
+R12
+R13

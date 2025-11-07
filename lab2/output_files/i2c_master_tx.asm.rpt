@@ -1,5 +1,5 @@
 Assembler report for i2c_master_tx
-Wed Oct 29 15:01:31 2025
+Tue Nov  4 16:21:00 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Standard Edition
 
 
@@ -10,7 +10,7 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Standard Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/Bohdan/Documents/studying/output_files/i2c_master_tx.sof
+  5. Assembler Device Options: C:/apks/csad2526ki404nechaibohdan17/lab2/output_files/i2c_master_tx.sof
   6. Assembler Messages
 
 
@@ -38,7 +38,7 @@ on the Quartus Prime software download page.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed Oct 29 15:01:31 2025 ;
+; Assembler Status      ; Successful - Tue Nov  4 16:21:00 2025 ;
 ; Revision Name         ; i2c_master_tx                         ;
 ; Top-level Entity Name ; i2c_master_tx                         ;
 ; Family                ; Cyclone V                             ;
@@ -53,23 +53,23 @@ on the Quartus Prime software download page.
 +--------+---------+---------------+
 
 
-+-------------------------------------------------------------------+
-; Assembler Generated Files                                         ;
-+-------------------------------------------------------------------+
-; File Name                                                         ;
-+-------------------------------------------------------------------+
-; C:/Users/Bohdan/Documents/studying/output_files/i2c_master_tx.sof ;
-+-------------------------------------------------------------------+
++-------------------------------------------------------------------------+
+; Assembler Generated Files                                               ;
++-------------------------------------------------------------------------+
+; File Name                                                               ;
++-------------------------------------------------------------------------+
+; C:/apks/csad2526ki404nechaibohdan17/lab2/output_files/i2c_master_tx.sof ;
++-------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/Bohdan/Documents/studying/output_files/i2c_master_tx.sof ;
-+----------------+----------------------------------------------------------------------------+
-; Option         ; Setting                                                                    ;
-+----------------+----------------------------------------------------------------------------+
-; JTAG usercode  ; 0x00ED1511                                                                 ;
-; Checksum       ; 0x00ED1511                                                                 ;
-+----------------+----------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/apks/csad2526ki404nechaibohdan17/lab2/output_files/i2c_master_tx.sof ;
++----------------+----------------------------------------------------------------------------------+
+; Option         ; Setting                                                                          ;
++----------------+----------------------------------------------------------------------------------+
+; JTAG usercode  ; 0x00ECD1AF                                                                       ;
+; Checksum       ; 0x00ECD1AF                                                                       ;
++----------------+----------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -78,14 +78,14 @@ on the Quartus Prime software download page.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Standard Edition
-    Info: Processing started: Wed Oct 29 15:01:20 2025
-Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off i2c_master_tx -c i2c_master_tx
+    Info: Processing started: Tue Nov  4 16:20:54 2025
+Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off i2c_project -c i2c_master_tx
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 5352 megabytes
-    Info: Processing ended: Wed Oct 29 15:01:31 2025
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:06
+    Info: Peak virtual memory: 5351 megabytes
+    Info: Processing ended: Tue Nov  4 16:21:00 2025
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:05
 
 

@@ -1,0 +1,8 @@
+
+State Machine - |i2c_master_tx|state
+Name state.ST_STOP state.ST_WAIT_ACK state.ST_TX_BYTE state.ST_START state.ST_IDLE 
+state.ST_IDLE 0 0 0 0 0 
+state.ST_START 0 0 0 1 1 
+state.ST_TX_BYTE 0 0 1 0 1 
+state.ST_WAIT_ACK 0 1 0 0 1 
+state.ST_STOP 1 0 0 0 1 
